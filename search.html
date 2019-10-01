@@ -14,9 +14,6 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #2F45A8;
-  top: 0;
-  left: 0;
-  width: 100%;
 }
 
 .topnav a {
@@ -38,6 +35,28 @@ body {
   float: right;
   border-radius: 25px;
 }
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ffffff;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
 .tbuts{
  border-radius: 25px 0px 0px 25px;
  text-indent:10px;
@@ -47,28 +66,39 @@ body {
  border-radius: 0px 25px 25px 0px;
 }
 
-.topnav input[type=text] {
+.cart_and_user{
+border-radius: 25px 25px 25px 25px;
+}
+@media screen and (max-width: 1000px) {
+  .topnav .search-container {
+    float: none;
+  }
+ 
+  .topnav a, .topnav input[type=text], .topnav, .search-container{
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    border-radius: 0px;
+  }
+  .cart_and_user, .buts{
+    float: none;
+    text-align: left;
+	border-radius: 25px 25px 25px 25px;
+ 	margin: 0;
+}
+  
+ .topnav input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
   border: none;
 }
-
-.topnav .search-container button{
-  float: right;
-  padding: 6px 12px;
-  margin-top: 8px;
-  margin-right: 6px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
 }
-.cart_and_user{
-border-radius: 25px 25px 25px 25px;
-}
-.topnav .search-container button:hover .dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn {
   background: #ccc;
+    color: black;
 }
 
 .dropdown {
@@ -111,7 +141,7 @@ border-radius: 25px 25px 25px 25px;
 .dropdown:hover .dropdown-content {
   display: block;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;
   }
@@ -211,8 +241,8 @@ border-radius: 25px 25px 25px 25px;
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="fr.html">Customer</a>
-      <a href="fr.html">Vendor</a>
+      <a href="U_Reg.html">Customer</a>
+      <a href="V_Reg.html">Vendor</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -220,8 +250,8 @@ border-radius: 25px 25px 25px 25px;
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">Customer</a>
-      <a href="#">Vendor</a>
+      <a href="U_login.html">Customer</a>
+      <a href="V_login.html">Vendor</a>
     </div>
   </div> 
     <div class="search-container">
@@ -271,7 +301,6 @@ border-radius: 25px 25px 25px 25px;
 <script>
 var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -285,8 +314,8 @@ function showSlides() {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
+  dots[slideIndex-1].className += " active"; 
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
 </script>
 </body>

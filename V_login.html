@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #f1f1f1;
+  color: #2F45A8;
+}
+.container {
+  width: 30%;
+  align: center;
+  display:inline-block;
+  border-radius:30px;
+  background-color: #FFFFFF;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+  background-color: #B0B8DE;
+  outline: none;
+}
+input[type=text], input[type=password], input[type=tel], input[type=email] {	
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  opacity: 0.7; 
+  border-radius:10px;
+  background: #c3c3c3;
+  border: none;
+  padding: 8px;
+  padding-left: 18px;
+}
+hr {
+  border: 1px solid #B0B8DE;
+  margin-bottom: 25px;
+}
+.loginbtn {
+  background-color: #2F45A8;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius:30px;
+  cursor: pointer;
+  width: 60%;
+  opacity: 0.8;
+  padding: 10px;
+}
+.loginbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<form" >
+    <h1>Login</h1>
+    <hr>
+    <label><b>Username</b></label><br>
+    <input id="username" type="text" placeholder="Enter Username" name="username" required ><br><br>
+    <label for="psw"><b>Password</b></label><br>
+    <input id="password" type="password" placeholder="Enter Password" name="password" required><br><br>
+    <hr>
+    <p><a href="forgotpass.html">Forgot Password</a></p>
+    <button type="button" class="loginbtn" onclick="loadDoc()" >Login</button>
+</div>	
+</form>
+<script type=text/javascript>             
+  function loadDoc(){     
+    var username = document.getElementById("username").value;
+     var password = document.getElementById("password").value;
+     var message;
+     var xhr = new XMLHttpRequest();
+     var url = "http://localhost:4000/login/";
+     xhr.open("POST", url, true);
+     xhr.setRequestHeader('Content-Type','application/json');
+     xhr.send(JSON.stringify({"username":username,"password":password}));
+     //document.getElementById("w").innerHTML= "abcdef";
+     xhr.onload = function () {
+         if (this.status == 200) {
+             alert("Successful Login!!");
+             window.location.href = "login.html";
+             //arr.push(this.responseText);
+         }
+         
+         else if (this.status == 400) {
+             message = alert(this.responseText);
+             //document.write("123456s");
+             alert(message.message);
+         }
+         else {
+             alert("incorrect request");
+         }
+    }
+}
+</script>
+</body>
+</html>
