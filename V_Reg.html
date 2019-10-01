@@ -15,11 +15,15 @@ body {
   border-radius:15px;
   background-color: #FFFFFF;
 }
-input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=date]:focus {
   background-color: #B0B8DE;
   outline: none;
+  transform: scale(1.1);
 }
-input[type=text], input[type=password], input[type=tel], input[type=email] {	
+input[type=text]:hover, input[type=password]:hover, input[type=tel]:hover, input[type=email]:hover, input[type=date]:hover { transform: scale(1.1);
+
+}
+input[type=text], input[type=password], input[type=tel], input[type=email], input[type=date] {	
   margin: 5px 0 22px 0;
   display: inline-block;
   opacity: 0.7; 
@@ -28,6 +32,7 @@ input[type=text], input[type=password], input[type=tel], input[type=email] {
   border: none;
   padding: 8px;
   padding-left: 18px;
+  transition: all .3s ease-in-out;
 }
 textarea{
   padding: 8px;
@@ -39,10 +44,15 @@ textarea{
   width:50%;
   background: #f1f1f1;
   border: none;
+  transition: all .3s ease-in-out;
 }
 textarea:focus{
   background-color: #B0B8DE;
   outline: none;
+  transform: scale(1.1);
+}
+textarea:hover{
+transform: scale(1.1);
 }
 hr {
   border: 1px solid #B0B8DE;
@@ -86,10 +96,10 @@ hr {
 	<input type="tel" placeholder="Enter Phone Number" name="phone" id='ph'pattern="[0-9]{10}"required><br><br>
 	
 	<label for="v_estb" ><b>Establishing Year</b></label><br>
-    <input type="text" placeholder="Enter Establishing Year" name="v_estb" id='v_estb' required ><br><br>
+    <input type="date" placeholder="Enter Establishing Year" name="v_estb" id='v_estb' required ><br><br>
     
      <label for="v_des" ><b>Description</b></label><br>
-    <input type="text" placeholder="Enter You Description" name="v_des" id='v_des' required ><br><br>
+    <textarea type="text" placeholder="Enter You Description" name="v_des" id='v_des' required ></textarea><br><br>
     
 	<label for="address"><b>Address</b></label><br>
 	<textarea name="address" placeholder="Enter Your Address" id ='add' required></textarea>

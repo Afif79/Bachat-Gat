@@ -141,11 +141,8 @@ border-radius: 25px 25px 25px 25px;
 .dropdown:hover .dropdown-content {
   display: block;
 }
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-}/* Slideshow container */
+
+/* Slideshow container */
 .slideshow-container {
   max-width: 2000px;
   position: relative;
@@ -219,7 +216,7 @@ border-radius: 25px 25px 25px 25px;
 }
 
 .grid-container > div {
-  background-color: rgba(241, 241, 241, 0.8);
+  background-color: rgba(241, 241, 241, 0.5);
   border: 0;
   padding: 10px;
   border-radius: 15px;
@@ -227,7 +224,24 @@ border-radius: 25px 25px 25px 25px;
   font-size: 30px;
   max-width: 280px;
   height: 300px;
+  margin-top: 25px;
+  transition: all .3s ease-in-out;
 }
+
+.grid-container > div:hover{
+transform:scale(1.1);
+ background-color: rgba(241, 241, 241, 1);
+}
+
+@media only screen and (max-width: 1000px) {
+ .grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-left:95px
+ }
+ }
 </style>
 </head>
 <body>
