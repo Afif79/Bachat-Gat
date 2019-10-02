@@ -1,0 +1,145 @@
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #f1f1f1;
+  color: #2F45A8;
+}
+.container {
+  width: 100%;
+  align: center;
+  display:inline-block;
+  border-radius:15px;
+  background-color: #FFFFFF;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=date]:focus, input[type=file]:focus,input[type=number]:focus, select:focus {
+  background-color: #B0B8DE;
+  outline: none;
+  transform: scale(1.1);
+}
+input[type=text]:hover, input[type=password]:hover, input[type=tel]:hover, input[type=email]:hover, input[type=date]:hover, input[type=file]:hover,input[type=number]:hover, select:hover
+{
+ transform: scale(1.1);
+}
+input[type=text], input[type=password], input[type=tel], input[type=email], input[type=date],input[type=file],input[type=number], select{	
+  margin: 5px 0 22px 0px;
+  width: 200px;
+  display: inline-block;
+  opacity: 0.7; 
+  border-radius:10px;
+  background: #f1f1f1;
+  border: none;
+  padding: 8px;
+  padding-left: 15px;
+  transition: all .3s ease-in-out;
+}
+textarea{
+  padding: 8px;
+  padding-left: 18px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  opacity: 0.8; 
+  border-radius:10px;
+  width:50%;
+  background: #f1f1f1;
+  border: none;
+  transition: all .3s ease-in-out;
+}
+textarea:focus{
+  background-color: #B0B8DE;
+  outline: none;
+  transform: scale(1.1);
+}
+textarea:hover{
+transform: scale(1.1);
+}
+hr {
+  border: 1px solid #B0B8DE;
+  margin-bottom: 25px;
+}
+button{
+  background-color: #2F45A8;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius:30px;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.8;
+}
+button:hover {
+  opacity: 1;
+}
+#pid::-webkit-inner-spin-button, 
+#pid::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<form>
+<h1>Add New Product</h1>
+<hr>
+<label for='vname'><b>Vendor Username</b></label><br>
+<input type='text' placeholder='Enter your Username' id='vid' required><br><br>
+<label for='cat'><b>Category</b></label><br>
+<select name="category" id='cat' form="cat"><br>
+  <option value="clothes">Clothes</option>
+  <option value="Food">Food</option>
+  <option value="Bags">Bags</option>
+  <option value="Footwear">Footwear</option>
+</select></br><br>
+<label for='selimg'><b>Select Image</b></label><br>
+<input type="file" name="image" id='image' accept="image/*" required>
+ <br>
+ <label for='quantity'><b>Quantity</b></label><br>
+ <input type ='number' placeholder='Enter Quantity' id='qun' required><br>
+<label for='price'><b>Price</b></label><br>
+<input type='number' placeholder='Enter price' id='pid' required><br>
+<label for='desc' ><b>Product Description</b></label><br>
+<textarea rows="4" cols="50" name="Proddesc"placeholder='Enter text here...' ></textarea><br><hr>
+<button type="submit" onclick='prod()'>Add Product</button>
+</form>
+</div>
+<script type=text/javascript>
+function prod(){
+	var vname=document.getElementById('vid').value;
+	var select=document.getElementById('cat').value;
+	var selimg=document.getElementById('image').value;
+	var quant=document.getElementById('qun').value;
+	var price=document.getElementById('pid').value;
+	if(vname.length > 15){
+		alert("Name exceeding maximum allowable character limit");
+		return false;
+	}
+	if (selimg == ''){
+		alert('Please select some image');
+		return false;
+	}
+	if (quant <= 0){
+		alert('Quantity should have at least one product.');
+		return false;
+	}
+	else if(isNaN(quant)){
+		alert("Invalid Quantity, character not allowed.");
+		return false;
+	}
+	if (price <= 0){
+		alert('Price should be greae than zero.');
+		return false;
+	}
+	else if(isNAN(price)){
+		alert("Invalid Price, character not allowed.");
+		return false;
+	}
+	return true;
+}
+</script>
+</body>
+</html>
