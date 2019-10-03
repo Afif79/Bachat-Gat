@@ -153,6 +153,47 @@ function checkPassword(password){
 	
 	
 }
+$(document).ready(function(){
+	$("#pwd").keyup(function(){
+		var pwd= $("#pwd").val();
+		if (pwd.length == 0 ){
+	$('#err').html(' ');
+	}
+		else if (pwd.length<8){
+		$("#err").html("**password should be minimum eight character long");
+		$("#err").css("color","red");
+		return false;
+	}
+	else{
+	$('#err').html('password is strong.');
+	$("#err").css("color","green");
+	return true;
+	
+	}
+	
+	return true;
+	});
+	$("#cpwd").keyup(function(){
+	
+		var pwd= $("#pwd").val();
+		var cpwd= $("#cpwd").val();
+	
+	 if (pwd.length ==0 || cpwd.length == 0){
+	$('#err').html(' ');
+	}	
+	else if(cpwd != pwd){
+		$("#err").html("**Password are not matching");
+		$("#err").css("color","red");
+		return false;
+		}
+	
+	else{
+	$('#err').html('password match');
+	$("#err").css("color","green");
+	return true;
+	}
+	});
+});
 function validation(){
 var name=document.getElementById("uid").value;
 var email=document.getElementById("email").value;
