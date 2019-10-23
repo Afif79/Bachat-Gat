@@ -19,12 +19,13 @@ connection.connect(function(err) {
 });
 
 router.post('/', (req, res) =>{
-	console.log("I got called");
+	//console.log("I got called");
 	var username= req.body.username;
 	   var password = req.body.password;
 	   console.log(username);
 	//Query to select the tuple of the user
-	connection.query('SELECT * FROM admin WHERE username = ?',[username], function (error, results, fields) {
+	connection.query('SELECT * FROM admin WHERE username = ?',[username], function (error, results,fields) {
+		console.log("done")
     if (error)
 	{
 		console.log("error");
@@ -33,13 +34,14 @@ router.post('/', (req, res) =>{
 	else
 	{
 		console.log(results);
-		if(results.length >0)
+		if(results.length > 0)
 		{
 			//User exists
 			if(results[0].Password == password)
 			{
 				//User password match
-				console.log("cahala ");
+				//console.log("cahala ");
+				console.log("done")
 				res.sendStatus(200);
 			}
 	        else{

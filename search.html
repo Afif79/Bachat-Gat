@@ -246,7 +246,7 @@ transform:scale(1.1);
 </head>
 <body>
 <div class="topnav">
-  <a href="file:///C:/Users/shaik/Desktop/IP/search.html#home">Home</a>
+  <a href="search.html">Home</a>
   <a href="file:///C:/Users/shaik/Desktop/IP/search.html#product">Product</a>
   <a href="file:///C:/Users/shaik/Desktop/IP/search.html#contact">Contact</a>
 
@@ -305,13 +305,43 @@ transform:scale(1.1);
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 <div class="grid-container">
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
+  <div><img id="img1" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
+  <div><img id="img2" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
+  <div><img id="img3" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
+  <div><img id="img4" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
+  <div><img id="img5" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
+  <div><img id="img6" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
 </div>
+<script>
+  var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/images/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send();
+  //document.getElementById("w").innerHTML= "abcdef";
+  xhr.onload = function () {
+      if (this.status == 200) {
+          //alert(JSON.parse(this.responseText));
+          //document.getElementById("img1").src=(this.responseText);
+          var ans = JSON.parse(this.responseText);
+          //arr.push(this.responseText);
+      }
+      
+      else if (this.status == 400) {
+          //message = alert(this.responseText);
+          //document.write("123456s");
+          alert(message.message);
+      }
+      else {
+          alert("incorrect request");
+      }
+      for(var i=0;i<ans.length;i++)
+      {
+        document.getElementById("img"+(i+1).toString()).src = ans[i];
+      }
+      
+ }
+</script>
 <script>
 var slideIndex = 0;
 showSlides();

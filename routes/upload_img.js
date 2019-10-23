@@ -1,6 +1,8 @@
 var http = require('http');
 var formidable = require('formidable');
 var fs = require('fs');
+var express = require('express');
+var router = express.Router();
 
 router.post('/', (req, res)=>{
   if (req.url == '/fileupload') {
