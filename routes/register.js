@@ -17,7 +17,6 @@ connection.connect(function(err) {
         console.log(err);
     }
 });
-//11,"pra","pra@gmail.com","pra123",1234567890,"kurla"
 router.post('/', (req, res) =>{
 	console.log("I got called")
 	var username= req.body.username;
