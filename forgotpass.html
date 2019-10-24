@@ -2,18 +2,24 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   background-color: #f1f1f1;
   color: #2F45A8;
+  background-image: url('download.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .container {
-  width: 100%;
+  width: 30%;
   align: center;
   display:inline-block;
-  border-radius:30px;
+  border-radius:20px;
   background-color: #FFFFFF;
 }
 input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
@@ -40,8 +46,9 @@ hr {
   padding: 16px 20px;
   margin: 8px 0;
   border: none;
-  border-radius:30px;
+  border-radius:15px;
   cursor: pointer;
+  
   width: 50%;
   opacity: 0.8;
 }
@@ -52,25 +59,23 @@ hr {
 </head>
 <body>
 <div class="container">
-<form  method="post" action="connect.php" id="sr">
+<form  method="post" action="#" id="sr">
     <h1>Change Password</h1>
     <hr>
-    <label for="email"><b>Email</b></label><br>
-    <input type="email" placeholder="Enter Email id" id="name "name="email" required><br><br>
-<label for="phone"><b>Phone Number</b></label><br>
-	<input type="tel" placeholder="Enter Phone Number" name="phone" pattern="[0-9]{10}"required><br><br>
-    <label for="psw"><b>New Password</b></label><br>
-    <input type="password" placeholder="Enter Password" id="pwd" name="password" required><br><br>
-    <br>
-	<label for="psw1"><b>Repeat Password</b></label><br>
-	<input type="password" placeholder="Enter Password again" id="cpwd" name="password" required><br><br>
-    <br>
+    <i class="fas fa-envelope"></i> &nbsp;
+    <input type="email" placeholder="Enter Email id" name="email" id="mail" required><br>
+	<i class="fas fa-phone-volume"></i> &nbsp;
+	<input type="tel" placeholder="Enter Phone Number" name="phone" id="ph" pattern="[0-9]{10}"required><br>
+    <i class="fas fa-lock"></i> &nbsp;
+    <input type="password" placeholder="Enter Password"  id="pwd" required><br>
+	<i class="fas fa-lock"></i> &nbsp;
+	<input type="password" placeholder="Enter Password again" id="cpwd"  required><br>
 	<div id="err"></div>
 	<br>
-    <button type="submit" class="loginbtn" onclick="sub()">Submit</button>
+    <hr>
+    <button type="submit" class="loginbtn" onclick="return sub()">Submit</button>
 </div>	
 </form>
-
 <script type="text/javascript">
 	$(document).ready(function(){
 	$("#cpwd").keyup(function(){
@@ -93,6 +98,29 @@ hr {
 	}
 	});
 });
+function sub(){
+	var mail=document.getElementById("mail").value;
+	var phone=document.getElementById("ph").value;
+	var pwd=document.getElementById("pwd").value;
+	var cpwd=document.getElementById("cpwd").value;
+	if(mail == 0 || phone == 0 || pwd ==0 || cpwd==0){
+		alert("please enter all fields.");
+		return false;
+	}
+	if(pwd != cpwd ){
+		alert("password is not matching.");
+		return false;
+	}
+	
+	
+	alert("Password has change successfully.");
+	return true;
+	
+	
+	
+}
 </script>
 </body>
+
 </html>
+ 

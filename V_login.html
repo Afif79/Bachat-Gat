@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   background-color: #f1f1f1;
   color: #2F45A8;
+  background-image: url('download.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
+
+  
+
 .container {
-  width: 40%;
+  width: 25%;
   align: center;
   display:inline-block;
   border-radius:30px;
@@ -55,27 +63,30 @@ hr {
 </style>
 </head>
 <body>
+
+  
 <div class="container">
+
 <form" >
     <h1>Login</h1>
     <hr>
-    <label><b>Username</b></label><br>
+    <i class="fas fa-user"></i> &nbsp;
     <input id="username" type="text" placeholder="Enter Username" name="username" required ><br><br>
-    <label for="psw"><b>Password</b></label><br>
+    <i class="fas fa-unlock-alt"></i> &nbsp;
     <input id="password" type="password" placeholder="Enter Password" name="password" required><br><br>
     <hr>
     <p><a href="forgotpass.html">Forgot Password</a></p>
     <button type="button" class="loginbtn" onclick="loadDoc()" >Login</button>
 </div>	
+
 </form>
 <script type=text/javascript>             
   function loadDoc(){     
     var username = document.getElementById("username").value;
-    localStorage.setItem("textvalue",username);
      var password = document.getElementById("password").value;
      var message;
      var xhr = new XMLHttpRequest();
-     var url = "http://localhost:4000/V_login/";
+     var url = "http://localhost:4000/login/";
      xhr.open("POST", url, true);
      xhr.setRequestHeader('Content-Type','application/json');
      xhr.send(JSON.stringify({"username":username,"password":password}));
@@ -83,12 +94,16 @@ hr {
      xhr.onload = function () {
          if (this.status == 200) {
              alert("Successful Login!!");
-             location.href = "vendor.html";
+             window.location.href = "login.html";
              //arr.push(this.responseText);
          }
          
+         else if (this.status == 400) {
+             message = alert(this.responseText);
+             //document.write("123456s");
+             alert(message.message);
+         }
          else {
-          localStorage.clear();
              alert("incorrect request");
          }
     }
