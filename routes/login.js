@@ -41,7 +41,7 @@ router.post('/', (req, res) =>{
 			{
 				//User password match
 				//console.log("cahala ");
-				console.log("done")
+				console.log("done");
 				res.sendStatus(200);
 			}
 	        else{

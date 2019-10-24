@@ -246,7 +246,7 @@ transform:scale(1.1);
 </head>
 <body>
 <div class="topnav">
-  <a id="name" href="search.html">Home</a>
+  <a href="search.html">Home</a>
   <a href="file:///C:/Users/shaik/Desktop/IP/search.html#product">Product</a>
   <a href="file:///C:/Users/shaik/Desktop/IP/search.html#contact">Contact</a>
 
@@ -263,13 +263,11 @@ transform:scale(1.1);
     <button class="dropbtn">Login 
       <i class="fa fa-caret-down"></i>
     </button>
-  <div class="dropdown-content">
+    <div class="dropdown-content">
       <a href="U_login.html">Customer</a>
       <a href="V_login.html">Vendor</a>
-  </div>
-  
+    </div>
   </div> 
-  <a href="search.html" onclick="logout()">Logout</a>
     <div class="search-container">
     <form>
       <input class="tbuts" type="text" placeholder="Search.." name="search">
@@ -364,18 +362,5 @@ function showSlides() {
   setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
 </script>
-<script>
-  
-var l=localStorage.getItem("textvalue");
-
- if(l.length>0){
-  document.getElementById("name").innerHTML=localStorage.getItem("textvalue");
-}
-</script>
-<script>
-function logout(){
-  localStorage.clear()
-}</script>
-  
 </body>
 </html>
