@@ -75,22 +75,18 @@ hr {
      var password = document.getElementById("password").value;
      var message;
      var xhr = new XMLHttpRequest();
-     var url = "http://localhost:4000/login/";
+     var url = "http://localhost:4000/U_login/";
      xhr.open("POST", url, true);
      xhr.setRequestHeader('Content-Type','application/json');
      xhr.send(JSON.stringify({"username":username,"password":password}));
      xhr.onload = function () {
          if (this.status == 200) {
             alert("Successful Login!!");
-            window.location.href = "search.html";
+            location.href = "search.html";
             //arr.push(this.responseText);
          }
-         
-         else if (this.status == 400) {
-             message = alert(this.responseText);
-             //document.write("123456s");
-         }
          else {
+          localStorage.clear();
              alert("incorrect request");
          }
     }

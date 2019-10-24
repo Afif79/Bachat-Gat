@@ -269,7 +269,7 @@ transform:scale(1.1);
   </div>
   
   </div> 
-  <a href="search.html" onclick="logout()">Logout</a>
+  <a href="search.html" onclick="logout()" id="logout">Logout</a>
     <div class="search-container">
     <form>
       <input class="tbuts" type="text" placeholder="Search.." name="search">
@@ -376,6 +376,13 @@ var l=localStorage.getItem("textvalue");
 function logout(){
   localStorage.clear()
 }</script>
-  
+<script>
+  if(localStorage.getItem("textvalue")==null){
+    document.getElementById("logout").style.display="none"
+  }
+  else{
+    document.getElementById("logout").style.display="block"
+  }
+</script>
 </body>
 </html>

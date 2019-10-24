@@ -9,12 +9,14 @@ var cors = require('cors');
 app.use(cors());
 
 var register = require('./routes/register');
-var login = require('./routes/login');
+var U_login = require('./routes/U_login');
+var V_login = require('./routes/V_login');
 var upload_img = require('./routes/upload_img');
 var images = require('./routes/images');
 
 app.use('/register',register);
-app.use('/login',login);
+app.use('/U_login',U_login);
+app.use('/V_login',V_login);
 app.use('/upload_img',upload_img);
 app.use('/images',images);
 
