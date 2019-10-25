@@ -19,7 +19,7 @@ connection.connect(function(err) {
 });
 
 router.post('/', (req, res) =>{
-	//console.log("I got called");
+	console.log("I got called");
 	var username= req.body.username;
 	   var password = req.body.password;
 	   console.log(username);
@@ -53,6 +53,7 @@ router.post('/', (req, res) =>{
 		else
 		{
 			//User does not exist
+			console.log("error3")
 			res.sendStatus(400);
 		}
     }

@@ -30,7 +30,8 @@ router.post('/', (req,res) =>{
 		}
 		else{	
 			console.log("Succesfully Uploaded");
-			res.sendFile("C:/Users/ASUS/Desktop/IP/bhachat ghat/Bachat-Gat/vendor.html")
+			res.sendStatus(200);
+			//res.sendFile("C:/Users/ASUS/Desktop/IP/bhachat ghat/Bachat-Gat/vendor.html")
 		}
 	});
 });

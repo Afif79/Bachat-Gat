@@ -83,10 +83,11 @@ hr {
 <script type=text/javascript>             
   function loadDoc(){     
     var username = document.getElementById("username").value;
+    localStorage.setItem("textvalue",username);
      var password = document.getElementById("password").value;
      var message;
      var xhr = new XMLHttpRequest();
-     var url = "http://localhost:4000/login/";
+     var url = "http://localhost:4000/V_login/";
      xhr.open("POST", url, true);
      xhr.setRequestHeader('Content-Type','application/json');
      xhr.send(JSON.stringify({"username":username,"password":password}));
@@ -94,7 +95,7 @@ hr {
      xhr.onload = function () {
          if (this.status == 200) {
              alert("Successful Login!!");
-             window.location.href = "login.html";
+             window.location.href = "vendor.html";
              //arr.push(this.responseText);
          }
          
