@@ -1,0 +1,89 @@
+<html>
+<head>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+  background-color: #f1f1f1;
+  color: #2F45A8;
+   background-image: url('download.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container{
+	width: 80%;
+  
+  display:inline-block;
+  border-radius:15px;
+  background-color: #FFFFFF;
+}
+#name {
+  position: absolute;
+  left: 450px;
+  top: 10px;
+}
+#desc {
+  position: absolute;
+  left: 450px;
+  top: 60px;
+}
+#price{
+	position: absolute;
+	left: 450px;
+	top: 350px;
+}
+#quant{
+	position: absolute;
+	left: 650px;
+	top: 350px;
+}
+#prodbt{
+	position: absolute;
+	left: 450px;
+	top: 400px;
+}
+#buy{
+	position: absolute;
+	left: 650px;
+	top: 400px;
+}
+</style>
+<script type="text/javascript">
+
+	var cart= [];
+	var Item =function(name,price,quantity){
+		this.name=name;
+		this.price=price;
+		this.quantity=quantity;
+	};
+	function addtocart(name,price,quantity){
+		
+		var item= new Item(name,price,quantity);
+		cart.push(item);
+		alert("Product has been successfully added to cart.");
+	}
+		
+	
+	
+</script>
+</head>
+
+<body>
+<div class="container">
+
+<img src="" height="400px" width="400px">
+
+
+<h1 id="name">productName</h1>
+
+<p id="desc">product description</p>
+<b id="price"> price</b>
+<b id="quant">Quantity</b>
+<button id="prodbt" onclick=" addtocart()">Add to cart</button>
+<button id="buy" onclick="">Buy</i></button>
+</div>
+
+</body>
+</html>
