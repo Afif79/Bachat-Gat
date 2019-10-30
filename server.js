@@ -8,11 +8,21 @@ app.use(bodyParser.urlencoded({
 var cors = require('cors');
 app.use(cors());
 
-var register = require('./routes/register');
-var login = require('./routes/login');
+var U_register = require('./routes/U_register');
+var V_register = require('./routes/V_register');
+var U_login = require('./routes/U_login');
+var V_login = require('./routes/V_login');
+var upload = require('./routes/upload');
+var images = require('./routes/images');
+var cart = require('./routes/cart');
 
-app.use('/register',register);
-app.use('/login',login);
+app.use('/cart',cart);
+app.use('/U_register',U_register);
+app.use('/V_register',V_register);
+app.use('/U_login',U_login);
+app.use('/V_login',V_login);
+app.use('/upload',upload);
+app.use('/images',images);
 
 app.listen(4000,(req,res)=>{
     console.log("Server started!!!")

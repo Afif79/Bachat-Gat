@@ -236,7 +236,7 @@ transform:scale(1.1);
 @media only screen and (max-width: 900px) {
  .grid-container {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto;
   background-color: #ffffff;
   padding: 10px;
   margin-left:95px
@@ -246,8 +246,8 @@ transform:scale(1.1);
 </head>
 <body>
 <div class="topnav">
-  <a href="file:///C:/Users/shaik/Desktop/IP/search.html#home">Home</a>
-  <a href="file:///C:/Users/shaik/Desktop/IP/search.html#product">Product</a>
+  <a id="name" href="search.html">Home</a>
+  <a href="product.html">Product</a>
   <a href="file:///C:/Users/shaik/Desktop/IP/search.html#contact">Contact</a>
 
    <div class="dropdown">
@@ -263,18 +263,20 @@ transform:scale(1.1);
     <button class="dropbtn">Login 
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-content">
+  <div class="dropdown-content">
       <a href="U_login.html">Customer</a>
       <a href="V_login.html">Vendor</a>
-    </div>
+  </div>
+  
   </div> 
+  <a href="search.html" onclick="logout()" id="logout">Logout</a>
     <div class="search-container">
-    <form>
+    
       <input class="tbuts" type="text" placeholder="Search.." name="search">
-      <button class="cart_and_user" type="submit"><i class="fa fa-cart-arrow-down"></i></button>
+      <button class="cart_and_user" type="submit" onclick="cart()"><i class="fa fa-cart-arrow-down"></i></button>
 	  <button class="cart_and_user" type="submit"><i class="fa fa-user"></i></button>
 	  <button class="buts" type="submit"><i class="fa fa-search"></i></button>
-    </form>
+    
   	</div>
 </div>
 <div class="slideshow-container">
@@ -305,13 +307,47 @@ transform:scale(1.1);
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 <div class="grid-container">
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
-  <div><img src="p1.png" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
+  <div><img id="img1" src="" height="200px" width="150px"><br><b>Ice pack</b><br>100₹</div>
+  <div><img id="img2" src="" height="200px" width="150px"><br><b>Rangoli</b><br>50₹</div>
+  <div><img id="img3" src="" height="200px" width="150px"><br><b>Holi colours</b><br>20₹</div> 
+  <div><img id="img4" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
+  <div><img id="img5" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div>
+  <div><img id="img6" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price</div> 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script>
+  var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/images/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send();
+  xhr.onload = function () {
+      if (this.status == 200) {
+          var ans = JSON.parse(this.responseText);
+      }
+      
+      else {
+        Swal.fire(
+                'Incorrect request',
+                '',
+                'error'
+              )
+      }
+      for(var i=0;i<ans.length;i++)
+      {
+        document.getElementById("img"+(i+1).toString()).src = ans[i];
+      }
+      
+ }
+</script>
+
+<script>
+  function cart(){
+  location.href="cart.html";
+  }
+</script>
+
+
 <script>
 var slideIndex = 0;
 showSlides();
@@ -331,6 +367,27 @@ function showSlides() {
   dots[slideIndex-1].className += " active"; 
   setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+</script>
+
+
+<script>
+
+var l=localStorage.getItem("textvalue");
+ if(l.length>0){
+  document.getElementById("name").innerHTML=localStorage.getItem("textvalue");
+}
+</script>
+<script>
+function logout(){
+  localStorage.clear()
+}</script>
+<script>
+  if(localStorage.getItem("textvalue")==null){
+    document.getElementById("logout").style.display="none"
+  }
+  else{
+    document.getElementById("logout").style.display="block"
+  }
 </script>
 </body>
 </html>
