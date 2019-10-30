@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #f1f1f1;
+  color: #2F45A8;
+  background-image: url('download.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  width: 25%;
+  align: center;
+  display:inline-block;
+  border-radius:20px;
+  background-color: #FFFFFF;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+  background-color: #B0B8DE;
+  outline: none;
+  transform: scale(1.1);
+}
+input[type=text]:hover, input[type=password]:hover, input[type=tel]:hover, input[type=email]:hover, input[type=date]:hover { transform: scale(1.1);
+}
+input[type=text], input[type=password], input[type=tel], input[type=email] {	
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  opacity: 0.7; 
+  border-radius:10px;
+  background: #c3c3c3;
+  border: none;
+  padding: 8px;
+  padding-left: 18px;
+  transition: all .3s ease-in-out;
+}
+hr {
+  border: 1px solid #B0B8DE;
+  margin-bottom: 25px;
+}
+.loginbtn {
+  background-color: #2F45A8;
+  color: white;
+  padding: 16px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius:10px;
+  cursor: pointer;
+  width: 60%;
+  opacity: 0.8;
+  padding: 10px;
+}
+.loginbtn:hover {
+  opacity: 1;
+}
+textarea{
+  padding: 8px;
+  padding-left: 18px;
+  margin: 5px 0 22px 16px;
+  display: inline-block;
+  resize:none;
+  opacity: 0.8; 
+  border-radius:10px;
+  width:50%;
+ background: #c3c3c3;
+  border: none;
+  outline:none;
+  transition: all .3s ease-in-out;
+}
+textarea:focus{
+  background-color: #B0B8DE;
+  outline: none;
+  transform: scale(1.1);
+}
+textarea:hover{
+transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Contact us</h1>
+	<h5>Please fill this form in a decent manner</h5>
+    <hr>
+    <i class="fas fa-user"></i> &nbsp;
+    <input id="name" type="text" placeholder="Enter Full Name" name="name" required ><br><br>
+    <i class="fa fa-envelope"></i> &nbsp;
+    <input id="email" type="text" placeholder="Enter Email" name="email" required><br><br>
+    <textarea name="message" placeholder="Enter Your Message" id ='message' required></textarea>
+    <hr>
+    <button type="button" class="loginbtn" >Submit</button>
+</div>	
