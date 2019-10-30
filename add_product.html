@@ -102,9 +102,14 @@ button:hover {
 <input type='number' placeholder='Enter price' id='pid' required><br>
 <label for='desc' ><b>Product Description</b></label><br>
 <textarea rows="4" cols="50" name="Proddesc"placeholder='Enter text here...' ></textarea><br><hr>
-<button type="submit">Add Product</button>
+<button id="butt" type="submit">Add Product</button>
 </form>
 
 </div>
+<script>
+  document.getElementById("butt").addEventListener("click",function(){
+    window.location.href = "search.html";
+  })
+</script>
 </body>
 </html>

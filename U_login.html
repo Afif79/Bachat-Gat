@@ -62,7 +62,6 @@ hr {
 </head>
 <body>
 <div class="container">
-<form" >
     <h1>Login</h1>
     <hr>
     <i class="fas fa-user"></i> &nbsp;
@@ -73,11 +72,11 @@ hr {
     <p><a href="forgotpass.html">Forgot Password</a></p>
     <button type="button" class="loginbtn" onclick="loadDoc()" >Login</button>
 </div>	
-</form>
-<script type=text/javascript>             
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script>      
   function loadDoc(){     
     var username = document.getElementById("username").value;
-    localStorage.setItem("textvalue",username);
+    //alert(localStorage.getItem("textvalue"));
      var password = document.getElementById("password").value;
      var message;
      var xhr = new XMLHttpRequest();
@@ -88,18 +87,22 @@ hr {
      //document.getElementById("w").innerHTML= "abcdef";
      xhr.onload = function () {
          if (this.status == 200) {
-             alert("Successful Login!!");
-             window.location.href = "search.html";
-             //arr.push(this.responseText);
-         }
-         
-         else if (this.status == 400) {
-             message = alert(this.responseText);
-             //document.write("123456s");
-             alert(message.message);
+          localStorage.clear();
+          localStorage.setItem("textvalue",username);
+            Swal.fire(
+              'Login Successful!',
+              '',
+              'success'
+              ).then(function(){
+                window.location.href = "search.html";
+              })
          }
          else {
-             alert("incorrect request");
+          Swal.fire(
+                'Incorrect Info',
+                '',
+                'error'
+              )
          }
     }
 }

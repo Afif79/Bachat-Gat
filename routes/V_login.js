@@ -24,7 +24,7 @@ router.post('/', (req, res) =>{
 	   var password = req.body.password;
 	   console.log(username);
 	//Query to select the tuple of the user
-	connection.query('SELECT * FROM vendor WHERE vname = ?',[username], function (error, results,fields) {
+	connection.query('SELECT * FROM vendor WHERE username = ?',[username], function (error, results,fields) {
 		console.log("done")
     if (error)
 	{
@@ -37,7 +37,7 @@ router.post('/', (req, res) =>{
 		if(results.length > 0)
 		{
 			//User exists
-			if(results[0].vpassword == password)
+			if(results[0].Password == password)
 			{
 				//User password match
 				//console.log("cahala ");
