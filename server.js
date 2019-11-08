@@ -15,7 +15,9 @@ var V_login = require('./routes/V_login');
 var upload = require('./routes/upload');
 var images = require('./routes/images');
 var cart = require('./routes/cart');
+var add_cart=require('./routes/add_cart');
 
+app.use('/add_cart',add_cart);
 app.use('/cart',cart);
 app.use('/U_register',U_register);
 app.use('/V_register',V_register);

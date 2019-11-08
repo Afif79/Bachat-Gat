@@ -1,50 +1,47 @@
 <html>
 <head>
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  background-color: #f1f1f1;
-  color: #2F45A8;
+	<style>
+		body {
+		  font-family: Arial, Helvetica, sans-serif;
+		  text-align: center;
+		  background-color: #2F45A8;
+		  color: #2F45A8;
+		
+		}
+		.container{	
+		width:30%;
+		height:50%;
+		align:center;
+		display:inline-block;
+		background-color: #FFFFFF;
+		border-radius:15px;
+		}
+		table, th, td
+		{
+			margin-top:70px;
+			align:center;
 
-}
-.container{	
-width:30%;
-align:center;
-display:inline-block;
-background-color: #FFFFFF;
-border-radius:15px;
-}
+		}
+		td, tr{
+			text-align:center;
+			vertical-align: center;
+		}
 
-</style>
+
+		</style>
 </head>
 <body>
 <div class="shopping cart">
 <div class="container">
-	<section>
-	<div class="prodimg">
-		<img id="1" src="" height="100px" width="100px">
-		
-	</div>
-	<div >
-		<p id="2">12</p>
-	</div>
-	<div >
-		<h5 id="3"></h5>
-	</div>
-	<div class="removeprod">
-		<button id="but">remove</button>
-	</div>
-	<div >
-		<h5 id="4">234</h5>
-	</div>
-	<div>
-		<button id="buy">BUY</button>
-	</div>
-	</section>
-		
-</div>
-</div>
+		<h1>MY CART</h1>
+		<table id="price_table" border="1px" align="center" style="width:90%">
+			<tr>
+				<th>Item</th>
+				<th>Price</th>
+			</tr>
+			
+		</table>
+	
 
 </body>
 <script>
@@ -58,7 +55,15 @@ border-radius:15px;
       if (this.status == 200) {
           //alert(JSON.parse(this.responseText));
           //document.getElementById("img1").src=(this.responseText);
-          var ans = JSON.parse(this.responseText);
+		  var ans = JSON.parse(this.responseText);
+		  console.log(ans);
+		  var table_price = document.getElementById("price_table")
+		  for(i=0;i<ans.length;i=i+2){
+			  var i1=ans[i];
+			  var i2= ans[i+1];
+				table_price.innerHTML+='<tr><td>'+i1+'</td><td>'+i2+'</td></tr>';
+		  }
+
           //arr.push(this.responseText);
       }
       
@@ -70,11 +75,9 @@ border-radius:15px;
       else {
           alert("incorrect request");
 	  }
-	  alert(document.getElementById("2").innerHTML);
-		document.getElementById("1").src = ans[0];
-		document.getElementById("2").innerHTML = ans[1];
-		document.getElementById("4").innerHTML = ans[2];
+	  
       
  }
 </script>
+
 </html>

@@ -4,12 +4,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/><link rel="stylesheet" href="./style.css">
-
+<link rel="stylesheet" href="./style.css">
 <style>
 * {box-sizing: border-box;}
 
@@ -314,67 +309,185 @@ transform:scale(1.1);
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 <div class="grid-container">
-  <div><img id="img1" src="" height="200px" width="150px"><br><b>Ice pack</b><br>100₹<button class="101" onclick=""><i class="fa fa-cart-arrow-down"></i></button></div>
-  <div><img id="img2" src="" height="200px" width="150px"><br><b>Rangoli</b><br>50₹<button class="101" onclick=""><i class="fa fa-cart-arrow-down"></i></button></div>
-  <div><img id="img3" src="" height="200px" width="150px"><br><b>Holi colours</b><br>20₹<button class="101" onclick=""><i class="fa fa-cart-arrow-down"></i></button></div> 
-  <div><img id="img4" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price<button class="101" onclick=""><i class="fa fa-cart-arrow-down"></i></button></div>
-  <div><img id="img5" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price<button class="101" onclick=""><i class="fa fa-cart-arrow-down"></i></button></div>
-  <div><img id="img6" src="" height="200px" width="150px"><br><b>Product Name</b><br>Product Price<button class="101" onclick=""><i class="fa fa-cart-arrow-down"></i></button></div> 
+  <div><img id="img1" src="" height="200px" width="150px"><br><b id="1">Ice pack</b><br><b id="12">100₹</b><button class="101" onclick="buy()"><i class="fa fa-cart-arrow-down"></i></button></div>
+  <div><img id="img2" src="" height="200px" width="150px"><br><b id="2">Rangoli</b><br><b id="22">50₹</b><button class="101" onclick="buy1()"><i class="fa fa-cart-arrow-down"></i></button></div>
+  <div><img id="img3" src="" height="200px" width="150px"><br><b id="3">Rangoli</b><br><b id="32">20₹</b><button class="101" onclick="buy2()"><i class="fa fa-cart-arrow-down"></i></button></div> 
+  <div><img id="img4" src="" height="200px" width="150px"><br><b id="4">Rangoli</b><br><b id="42">70₹</b><button class="101" onclick="buy3()"><i class="fa fa-cart-arrow-down"></i></button></div>
+  <div><img id="img5" src="" height="200px" width="150px"><br><b id="5">Rangoli</b><br><b id="52">40₹</b><button class="101" onclick="buy4()"><i class="fa fa-cart-arrow-down"></i></button></div>
+  <div><img id="img6" src="" height="200px" width="150px"><br><b id="6">Rangoli</b><br><b id="52">40₹</b><button class="101" onclick="buy4()"><i class="fa fa-cart-arrow-down"></i></button></div> 
 </div>
-<<<<<<< HEAD
 
-
-=======
 <!-- partial:index.partial.html -->
 <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">E-Bachat Gat is made by Ganesh Afif and Prabodh. E-BachatGat is a website for all Bachatgats to sell their products online and expand thier business.</p>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Address</h6>
-			<p class="text-justify" >Don Bosco Institute Of Technology Premier Automobiles Road, Opp. Fiat Company, Kurla (W), Mumbai- 400 070</p>
-            </ul>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
-            <ul class="footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="contact_us.html">Contact Us</a></li>
-              <li><a href="product.html">Product</a></li>
-              <li><a href="U_Reg.html">Register</a></li>
-              <li><a href="U_login.html">Login</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6> About</h6>
+        <p class="text-justify">E-Bachat Gat is made by Ganesh Afif and Prabodh. E-BachatGat is a website for all Bachatgats to sell their products online and expand thier business.</p>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
-         <a href="https://www.dbit.in/">DonBosco</a>.
-            </p>
-          </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-            </ul>
-          </div>
-        </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Address</h6>
+  <p class="text-justify" >Don Bosco Institute Of Technology Premier Automobiles Road, Opp. Fiat Company, Kurla (W), Mumbai- 400 070</p>
+        </ul>
       </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="U_Reg.html">Register</a></li>
+          <li><a href="U_login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
+     <a href="https://www.dbit.in/">DonBosco</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
 </footer>
 <!-- partial -->
-  
->>>>>>> 52ba17bbeaf9509c94c75fb1f62045118fc03f7d
+<script>
+  function buy(){
+    var name = document.getElementById("1").innerHTML;
+    var price = document.getElementById("12").innerHTML;
+    alert(name)
+    var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/add_cart/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send(JSON.stringify({"name":name,"price":price}));
+  xhr.onload = function () {
+      if (this.status == 200) {
+        return true;
+      }
+      
+      else {
+        Swal.fire(
+                'Incorrect request',
+                '',
+                'error'
+              )
+      }
+      
+ }
+  }
+
+  function buy1(){
+    var name = document.getElementById("2").innerHTML;
+    var price = document.getElementById("22").innerHTML;
+    alert(name)
+    var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/add_cart/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send(JSON.stringify({"name":name,"price":price}));
+  xhr.onload = function () {
+      if (this.status == 200) {
+        return true;      }
+      
+      else {
+        Swal.fire(
+                'Incorrect request',
+                '',
+                'error'
+              )
+      }
+      
+ }
+  }
+
+  function buy2(){
+    var name = document.getElementById("3").innerHTML;
+    var price = document.getElementById("32").innerHTML;
+    alert(name)
+    var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/add_cart/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send(JSON.stringify({"name":name,"price":price}));
+  xhr.onload = function () {
+      if (this.status == 200) {
+        return true;
+      }
+      
+      else {
+        Swal.fire(
+                'Incorrect request',
+                '',
+                'error'
+              )
+      }
+      
+ }
+  }function buy3(){
+    var name = document.getElementById("4").innerHTML;
+    var price = document.getElementById("42").innerHTML;
+    alert(name)
+    var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/add_cart/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send(JSON.stringify({"name":name,"price":price}));
+  xhr.onload = function () {
+      if (this.status == 200) {
+return true;      }
+      
+      else {
+        Swal.fire(
+                'Incorrect request',
+                '',
+                'error'
+              )
+      }
+      
+ }
+  }
+
+  function buy4(){
+    var name = document.getElementById("5").innerHTML;
+    var price = document.getElementById("52").innerHTML;
+    alert(name)
+    var xhr = new XMLHttpRequest();
+  var url = "http://localhost:4000/add_cart/";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.send(JSON.stringify({"name":name,"price":price}));
+  xhr.onload = function () {
+      if (this.status == 200) {
+          //alert("ok");
+          return true;
+      }
+      
+      else {
+        Swal.fire(
+                'Incorrect request',
+                '',
+                'error'
+              )
+      }
+      
+ }
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script>
   var xhr = new XMLHttpRequest();

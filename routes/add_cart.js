@@ -21,8 +21,10 @@ connection.connect(function(err) {
 router.post('/', (req, res) =>{
     console.log("I got called images");
     let arr = [];
+    var name = req.body.name;
+    var price = req.body.price;
 	//Query to select the tuple of the user
-	connection.query('SELECT name,price FROM add_cart', function (error, result) {
+	connection.query('insert into add_cart (name,price) values(?,?)',[name,price], function (error, result) {
     if (error)
 	{
 		console.log("error");
@@ -30,15 +32,9 @@ router.post('/', (req, res) =>{
     }
 	else
 	{
-		var data = result;
-        //console.log(data)
-        //console.log(result[0].location);
-        for(var i=0,len=data.length;i<len;i++){
-            arr.push(data[i].name);
-                arr.push(data[i].price);
-		}
-			//User exists
-		res.status(200).send(arr);
+            //User exists
+            console.log("ok");
+		res.status(200);
     }
     });
 });
